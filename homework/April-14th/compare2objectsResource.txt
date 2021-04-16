@@ -1,5 +1,4 @@
-1. deep copy vs. shallow copy, manual comparison, and referential equality
-https://dmitripavlutin.com/how-to-compare-objects-in-javascript/
+
 
 2. stringify, Object.toString(), and lodash
 https://www.samanthaming.com/tidbits/33-how-to-compare-2-objects/
