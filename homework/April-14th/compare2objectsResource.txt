@@ -1,4 +1,5 @@
-
+1. Youtube video
+https://www.youtube.com/watch?v=4NKxcbQpmEY
 
 2. stringify, Object.toString(), and lodash
 https://www.samanthaming.com/tidbits/33-how-to-compare-2-objects/

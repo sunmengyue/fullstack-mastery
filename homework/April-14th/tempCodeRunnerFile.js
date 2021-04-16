@@ -1,3 +1,2 @@
-for (let i = 0; i < pair1.length; i++) {
-//     for (let j = 0; j < pair1)
-//   }
+comparingObjects({ a: 1, b: 1 }, { a: 1, b: 1 });
+// comparingObjects({ a: 1, b: 1 }, { a: 1, b: { e: 4 } });
