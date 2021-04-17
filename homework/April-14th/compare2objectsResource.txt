@@ -1,5 +1,9 @@
-1. Youtube video
+1. stringify, Object.toString(), and lodash
+https://www.samanthaming.com/tidbits/33-how-to-compare-2-objects/
+
+2. general objects comparison
+https://gomakethings.com/check-if-two-arrays-or-objects-are-equal-with-javascript/
+
+3. Youtube video
 https://www.youtube.com/watch?v=4NKxcbQpmEY
 
-2. stringify, Object.toString(), and lodash
-https://www.samanthaming.com/tidbits/33-how-to-compare-2-objects/
