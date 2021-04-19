@@ -24,19 +24,19 @@ var countMatches = function (items, ruleKey, ruleValue) {
   // Output: 2
   // Explanation: There are only two items matching the given rule, which are ["phone","blue","pixel"] and ["phone","gold","iphone"].
   // Note that the item ["computer","silver","phone"] does not match.
-  let outputItems = [];
+  let count = 0;
   for (let i = 0; i < items.length; i++) {
     if (ruleKey === 'type' && items[i][0] === ruleValue) {
-      outputItems.push(items[i]);
+      count++;
     }
     if (ruleKey === 'color' && items[i][1] === ruleValue) {
-      outputItems.push(items[i]);
+      count++;
     }
     if (ruleKey === 'name' && items[i][2] === ruleValue) {
-      outputItems.push(items[i]);
+      count++;
     }
   }
-  return outputItems.length;
+  return count;
 };
 
-console.log(countMatches(items, 'color', 'silver'));
+console.log(countMatches(items, 'type', 'phone'));

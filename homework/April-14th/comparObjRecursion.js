@@ -17,16 +17,17 @@ const compareDeep = (obj1, obj2) => {
     if (!bothObjs) return false;
     // base case: if the values are both primitive, return a boolean
     if (typeof val1 !== 'object' && typeof val2 !== 'object') {
-      return val1 === val2;
+      return val1 === val2; // return when a false only
     }
     // recursion rule: if both of them are objects, check deeply
     if (bothObjs) {
       compareDeep(val1, val2);
     }
   }
+  // base case : done
 };
 
-let object1 = { a: { b: { c: { d: 'e' } } }, f: { g: 'h' } };
-let object2 = { a: { b: { c: { d: 'e' } } }, f: { g: 'h' } };
+let object1 = { h: 'i', a: { b: { c: { d: 'e' } } }, f: { g: 'h' } };
+let object2 = { h: 'i', a: { b: { c: { d: 'e' } } }, f: { g: 'h' } };
 
 console.log(compareDeep(object1, object2));
