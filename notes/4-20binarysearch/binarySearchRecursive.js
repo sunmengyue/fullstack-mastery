@@ -1,15 +1,17 @@
 let myArray = [1, 3, 4, 6, 8, 9, 11];
 
-function binarySearchRecurseively(arr, val, left = 0, right = 0) {
-  let mid = Math.floor((left + right) / 2);
-  if (arr[mid] === val) return mid;
-  if (val < arr[mid]) {
-    return binarySearchRecurseively(arr, val, left, mid - 1);
-  } else if (val > arr[mid]) {
-    return binarySearchRecurseively(arr, val, left + 1, right);
+function binarySearch(arr, val) {
+  let mid = Math.floor(arr.length / 2);
+  // base case
+  if (arr[mid] === val) return true;
+  if (arr.length === 1 && arr[mid] !== val) return false;
+
+  // recursive rule
+  if (arr[mid] < val) {
+    return binarySearch(arr.slice(mid + 1), val);
   } else {
-    return -1;
+    return binarySearch(arr.slice(0, mid), val);
   }
 }
 
-console.log(binarySearchRecurseively(myArray, 11));
+console.log(binarySearch(myArray, 11));
