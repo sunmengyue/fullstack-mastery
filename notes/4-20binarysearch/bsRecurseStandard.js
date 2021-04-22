@@ -1,6 +1,6 @@
 let myArray = [1, 3, 4, 6, 8, 9, 11];
 
-const binarySearch = (arr, start, end, targetVal) => {
+const binarySearch2 = (arr, targetVal, start = 0, end = arr.length - 1) => {
   // base case 1:
   if (start > end) return -1;
   // base case 2:
@@ -8,10 +8,10 @@ const binarySearch = (arr, start, end, targetVal) => {
   if (arr[mid] === targetVal) return mid;
   // recursive rule
   if (arr[mid] > targetVal) {
-    return binarySearch(arr, start, mid - 1, targetVal);
+    return binarySearch2(arr, targetVal, start, mid - 1);
   } else {
-    return binarySearch(arr, mid + 1, end, targetVal);
+    return binarySearch2(arr, targetVal, mid + 1, end);
   }
 };
 
-console.log(binarySearch(myArray, 0, myArray.length - 1, 6));
+console.log(binarySearch2(myArray, 3));
