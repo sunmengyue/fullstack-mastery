@@ -5,7 +5,11 @@ class Stack {
   }
 
   push(el) {
-    this.items.splice(0, 0, el);
+    // this.items.splice(0, 0, el);
+    for (let i = this.items.length; i > 0; i--) {
+      this.items[i] = this.items[i - 1];
+    }
+    this.items[0] = el;
     this.top = this.top + 1;
     return el;
   }
@@ -42,5 +46,5 @@ let myStack = new Stack();
 myStack.push(1);
 myStack.push(2);
 myStack.push(3);
-myStack.pop();
+myStack.push(4);
 myStack.print();
