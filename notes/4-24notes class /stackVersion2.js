@@ -11,7 +11,7 @@ class Stack {
   }
 
   isEmpty() {
-    return this.items.length === 0 ? true : false;
+    return this.top === 0 ? true : false;
   }
 
   peek() {
@@ -42,4 +42,5 @@ let myStack = new Stack();
 myStack.push(1);
 myStack.push(2);
 myStack.push(3);
+myStack.pop();
 myStack.print();

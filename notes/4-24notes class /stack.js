@@ -11,7 +11,7 @@ class Stack {
   }
 
   isEmpty() {
-    return this.items.length === 0 ? true : false;
+    return this.top === 0 ? true : false;
   }
 
   peek() {
