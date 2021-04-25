@@ -5,7 +5,7 @@ class Stack {
   }
 
   push(el) {
-    this.items[this.top] = el;
+    this.items.splice(0, 0, el);
     this.top = this.top + 1;
     return el;
   }
@@ -15,13 +15,13 @@ class Stack {
   }
 
   peek() {
-    return this.items[this.top - 1];
+    return this.items[0];
   }
 
   pop() {
     if (!this.isEmpty()) {
-      let lastElement = this.items[this.top - 1];
-      this.items.splice(-1, 1);
+      let lastElement = this.items[0];
+      this.items.splice(0, 1);
       this.top = this.top - 1;
       return lastElement;
     } else {
@@ -42,12 +42,4 @@ let myStack = new Stack();
 myStack.push(1);
 myStack.push(2);
 myStack.push(3);
-myStack.print();
-console.log(myStack.peek());
-myStack.pop();
-console.log(myStack.getLength());
-myStack.pop();
-myStack.pop();
-console.log(myStack.pop());
-console.log(myStack.isEmpty());
 myStack.print();
