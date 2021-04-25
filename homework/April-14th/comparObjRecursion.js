@@ -13,9 +13,7 @@ const compareDeep = (obj1, obj2) => {
     let val1 = obj1[key];
     let val2 = obj2[key];
     let bothObjs = isObj(val1) && isObj(val2);
-    // if one of val1 and val2 is object, return false
-    if (!bothObjs) return false;
-    // base case: if the values are both primitive, return a boolean
+    // base case 2 and 3: when our value is not an object
     if (typeof val1 !== 'object' && typeof val2 !== 'object') {
       return val1 === val2; // return when a false only
     }
@@ -30,4 +28,4 @@ const compareDeep = (obj1, obj2) => {
 let object1 = { h: 'i', a: { b: { c: { d: 'e' } } }, f: { g: 'h' } };
 let object2 = { h: 'i', a: { b: { c: { d: 'e' } } }, f: { g: 'h' } };
 
-console.log(compareDeep(object1, object2));
+compareDeep(object1, object2);
