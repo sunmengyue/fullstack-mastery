@@ -7,15 +7,14 @@ class Stack {
   push(value) {
     this.elements[this.top] = value;
     this.top = this.top + 1;
+    console.log(this.elements);
     return value;
   }
 
   pop() {
-    if (!this.isEmpty) {
-      let lastEl = this.elements[this.top - 1];
-      this.elements.splice(-1, 1);
+    if (!this.isEmpty()) {
       this.top = this.top - 1;
-      return lastEl;
+      return this.elements.splice(-1)[0];
     } else {
       return 'The stack is empty';
     }
