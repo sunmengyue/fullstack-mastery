@@ -5,6 +5,8 @@ const undo = new Stack();
 const redo = new Stack();
 
 const editor = document.getElementById('editor');
+const undoButton = document.getElementById('undo');
+const redoButton = document.getElementById('redo');
 
 editor.addEventListener('keyup', (ev) => {
   if (ev.ctrlKey && ev.key === 'z') {

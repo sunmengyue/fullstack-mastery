@@ -27,3 +27,13 @@ textarea {
   outline: none;
   border-radius: 10px;
 }
+
+.action {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.action > button {
+  height: 30px;
+}
