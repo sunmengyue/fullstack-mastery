@@ -2,13 +2,15 @@
 
 body {
   margin: 0;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  background-color: #f2f2f2;
-  width: 100%;
+  max-width: 1600px;
   align-items: center;
   font-family: 'Red Had Display', sans-serif;
 }
@@ -33,7 +35,7 @@ p {
 }
 
 .header_info {
-  padding: 20px;
+  padding: 100px;
 }
 
 button {
