@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.content-container {
+  color: white;
+  background-color: #070c20;
+}
