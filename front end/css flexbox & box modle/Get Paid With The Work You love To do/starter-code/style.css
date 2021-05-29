@@ -15,6 +15,7 @@ p {
   font-weight: 100;
   font-size: 9px;
   line-height: 1.5;
+  margin-top: 10px;
 }
 
 .content-container {
@@ -26,7 +27,7 @@ p {
 
 .content-container > img {
   margin: 30px 60px;
-  width: 60px;
+  width: 70px;
 }
 
 .header {
@@ -35,9 +36,13 @@ p {
   align-items: center;
 }
 
-.header > img {
+.header > img:first-of-type {
   width: 200px;
-  margin: 30px;
+  margin-right: 30px;
+}
+.header > img:last-of-type {
+  width: 200px;
+  margin-left: 30px;
 }
 
 .header > .header-info {
@@ -48,11 +53,6 @@ p {
   flex-direction: column;
   align-items: center;
 }
-
-.header-info > h2 {
-  margin-bottom: 10px;
-}
-
 .header-info > h2 > span {
   color: #3ee9e5;
 }
@@ -60,4 +60,35 @@ p {
 .header-info > img {
   width: 16px;
   margin-top: 20px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  padding: 70px;
+}
+
+.main > .action {
+  width: 200px;
+}
+
+.main > .even {
+  margin: 40px;
+}
+
+.main img {
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+.main img:last-of-type {
+  height: 72.5px;
+}
+
+.footer {
+  padding: 20px;
+}
+
+.footer > h3 {
+  text-align: center;
 }
