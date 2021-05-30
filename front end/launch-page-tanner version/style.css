@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600&display=swap');
+
+body {
+  margin: 0;
+  background: #080c20;
+  color: white;
+  font-family: 'Manrope', sans-serif;
+}
+
+p {
+  opacity: 0.7;
+}
+
+h1 {
+  font-size: 2.8em;
+  text-align: center;
+}
+
+h1 span {
+  color: #3ee9e5;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.banner-content {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('assets/bg-hero-squiggle.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.banner-content > p {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.main {
+  width: 100%;
+  padding: 10%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+}
+
+.features div {
+  width: 250px;
+}
+
+.features div:nth-child(even) {
+  margin-top: 60px;
+}
+
+.illustration {
+  background-color: #093f68;
+  border-radius: 20px;
+  max-width: 125px;
+  max-height: 135px;
+  padding: 20px;
+  text-align: center;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.info > p {
+  margin-bottom: 60px;
+}
+
+.pricing {
+  display: flex;
+  margin: 40px 0;
+  justify-content: center;
+}
+
+.card {
+  background-color: grey;
+  width: 400px;
+  margin: 10px;
+  padding: 30px;
+  box-sizing: border-box;
+  position: relative;
+  border-radius: 10px;
+}
+
+.card h2 {
+  font-size: 2.5em;
+}
+
+.card h2 span {
+  font-weight: 100;
+  font-size: 0.5em;
+  opacity: 0.6;
+}
+
+.card #top {
+  position: absolute;
+  top: -22px;
+}
+
+.card ul {
+  list-style: none;
+  position: relative;
+}
+
+.card ul > li {
+  margin: 20px 0;
+  position: relative;
+}
+
+#free {
+  background-color: #093f68;
+  color: #fff;
+}
+
+#paid {
+  background-color: #3ee9e5;
+  color: black;
+  margin-left: 30px;
+  transform: scale(1.1);
+}
+
+#free .check {
+  position: absolute;
+  left: -20px;
+  margin-top: 5px;
+  fill: #fff !important;
+}
+
+#paid .check {
+  position: absolute;
+  left: -20px;
+  margin-top: 5px;
+}
+
+#paid #top {
+  top: -35px;
+}
+
+.footer {
+  padding: 5%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(assets/bg-footer-squiggle.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 60px;
+}
+
+.footer input {
+  outline: none;
+  border: none;
+  background-color: #093f68;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 30px;
+  margin-right: 20px;
+}
+
+#error {
+  visibility: hidden;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer button {
+  background-color: #3ee9e5;
+  color: #093f68;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  padding: 0 20px;
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
