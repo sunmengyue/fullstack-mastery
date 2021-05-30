@@ -152,14 +152,7 @@ h1 span {
   transform: scale(1.1);
 }
 
-#free .check {
-  position: absolute;
-  left: -20px;
-  margin-top: 5px;
-  fill: #fff !important;
-}
-
-#paid .check {
+.check {
   position: absolute;
   left: -20px;
   margin-top: 5px;
