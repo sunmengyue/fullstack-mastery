@@ -7,3 +7,11 @@
   align-items: center;
   justify-content: center;
 }
+
+h3 {
+  filter: invert(1);
+}
+
+img {
+  max-width: 400px;
+}
