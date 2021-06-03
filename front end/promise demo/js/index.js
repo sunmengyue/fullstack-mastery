@@ -7,5 +7,8 @@ function getImage() {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-    });
+      let img = `<img src=${data.urls.regular} />`;
+      document.getElementById('container').innerHTML = img;
+    })
+    .catch((error) => console.log(error));
 }
