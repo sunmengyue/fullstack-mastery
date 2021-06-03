@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300;400&display=swap');
+* {
+  margin: 0;
+}
+
+html {
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Chivo', sans-serif;
+  color: #fff;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #111725;
+  padding: 10%;
+  margin: 100px auto;
+  position: relative;
+}
+
+.back-container {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  top: 20%;
+  margin-left: auto;
+}
+
+.back-container > img {
+  right: 80%;
+}
+
+.back-container > .logo {
+  width: 20%;
+}
+
+.back-container > .host {
+  width: 80%;
+}
+
+.front-container {
+  padding: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: #111725;
+  width: 670px;
+  position: absolute;
+  top: 27%;
+  left: 5%;
+}
+
+.front-container > img {
+  width: 250px;
+  position: absolute;
+  top: 79%;
+  right: -75%;
+}
+
+.front-container > .main > h1 {
+  color: #54e6af;
+  font-weight: 300;
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.main > h1 > span {
+  color: white;
+}
+
+.main > p {
+  opacity: 0.4;
+  font-size: 1rem;
+  margin-bottom: 40px;
+  line-height: 1.5;
+  width: 60%;
+}
+
+.main > form {
+  flex-basis: 40%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #383e4d;
+  width: fit-content;
+  border-radius: 20px;
+  margin-bottom: 60px;
+}
+
+.main > form > input {
+  background-color: #383e4d;
+  width: fit-content;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.main > form > input[type='submit'] {
+  background-color: #54e6af;
+}
+
+.footer > img {
+  margin-right: 50px;
+}
