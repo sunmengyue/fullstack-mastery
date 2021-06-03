@@ -7,9 +7,12 @@ function getImage() {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
+
       let result = `
       <h3>${data.description ? data.description : data.alt_description}</h3>
-      <img src=${data.urls.regular} />`;
+      <img src=${data.urls.thumb} />`;
+
+      document.body.style.backgroundColor = data.color;
       document.getElementById('container').innerHTML = result;
     })
     .catch((error) => console.log(error));
