@@ -49,6 +49,11 @@ body {
   color: rgba(246, 246, 247, 0.8);
 }
 
+.nav .nav__item__active {
+  color: white;
+  border-bottom: 1px solid white;
+}
+
 .nav .nav__item:hover {
   cursor: pointer;
   color: white;
@@ -65,7 +70,7 @@ body {
 }
 
 .main > .planet {
-  margin-right: 150px;
+  margin-right: 8%;
 }
 
 .main__info {
@@ -113,6 +118,10 @@ body {
 }
 .internal__pages > button:hover {
   cursor: pointer;
+  background-color: #542ba5;
+}
+
+.internal__pages .active {
   background-color: #542ba5;
 }
 

@@ -14,9 +14,7 @@
     <title>Mercury</title>
     <link rel="stylesheet" href="css/style.css" />
     <style>
-      .active {
-        background-color: #542ba5;
-      }
+    
     </style>
   </head>
   <body>
@@ -24,14 +22,14 @@
       <div class="header">
         <h2>The planets</h2>
         <div class="nav">
-          <button onclick="changePlanet(this.value)" class="nav__item" href="index.html" value="0">mercury</button>
-          <button onclick="changePlanet(this.value)" class="nav__item" href="venus.html" value="1">venus</button>
-          <button onclick="changePlanet(this.value)" class="nav__item" href="earth.html" value="2">earth</button>
-          <button onclick="changePlanet(this.value)" class="nav__item" href="mars.html" value="3">mars</a>
-          <button onclick="changePlanet(this.value)" class="nav__item" href="jupiter.html" value="4">jupiter</button>
-          <button onclick="changePlanet(this.value)" class="nav__item" href="saturn.html" value="5">saturn</button>
-          <button onclick="changePlanet(this.value)" class="nav__item" href="uranus.html" value="6">uranus</button>
-          <button onclick="changePlanet(this.value)" class="nav__item" href="neptune.html" value="7">neptune</button>
+          <button onclick="changePlanet(this)" class="nav__item" href="index.html" value="0">mercury</button>
+          <button onclick="changePlanet(this)" class="nav__item" href="venus.html" value="1">venus</button>
+          <button onclick="changePlanet(this)" class="nav__item" href="earth.html" value="2">earth</button>
+          <button onclick="changePlanet(this)" class="nav__item" href="mars.html" value="3">mars</a>
+          <button onclick="changePlanet(this)" class="nav__item" href="jupiter.html" value="4">jupiter</button>
+          <button onclick="changePlanet(this)" class="nav__item" href="saturn.html" value="5">saturn</button>
+          <button onclick="changePlanet(this)" class="nav__item" href="uranus.html" value="6">uranus</button>
+          <button onclick="changePlanet(this)" class="nav__item" href="neptune.html" value="7">neptune</button>
         </div>
       </div>
       <div class="main">
@@ -86,13 +84,10 @@
       let revolution = document.getElementById('revolution');
       let radius = document.getElementById('radius');
       let temp = document.getElementById('temp');
-
+      let navItems = document.getElementsByClassName("nav__item");
       let internalBtns = document.querySelectorAll('.internal__pages button');
-      let overviewBtn = document.querySelector('.internal__pages button:nth-of-type(1)');
-      let structureBtn = document.querySelector('.internal__pages button:nth-of-type(2)');
-      let geologyBtn = document.querySelector('.internal__pages button:nth-of-type(3)');
-     
-
+    
+    
       let loadPage = () => {
         fetch('data.json')
         .then((promise) => promise.json())
@@ -109,10 +104,13 @@
       }
       loadPage();
       
-      
       let changePlanet = e => {
-         id = e;
+         id = e.value;
          loadPage();
+         [...navItems].forEach(item => {
+           item.classList.remove("nav__item__active");
+         });
+         e.classList.add("nav__item__active")
       }
 
       let changeInfo = (e) => {
@@ -123,11 +121,9 @@
             overview.innerText = json[id][e.value].content;
             planet.src = json[id].images[e.id];
             btn.classList.remove('active');
-          });
-          e.classList.add("active");
-          console.log(e.id);
-
-          
+            e.classList.add('active');
+            console.log(e)
+          });     
         })
       }
 
