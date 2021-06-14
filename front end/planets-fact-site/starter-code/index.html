@@ -13,27 +13,32 @@
 
     <title>Mercury</title>
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .active {
+        background-color: #542ba5;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
       <div class="header">
         <h2>The planets</h2>
-        <div class="planet__links">
-          <a href="index.html">mercury</a>
-          <a href="venus.html">venus</a>
-          <a href="earth.html">earth</a>
-          <a href="mars.html">mars</a>
-          <a href="jupiter.html">jupiter</a>
-          <a href="saturn.html">saturn</a>
-          <a href="uranus.html">uranus</a>
-          <a href="neptune.html">neptune</a>
+        <div class="nav">
+          <button onclick="changePlanet(this.value)" class="nav__item" href="index.html" value="0">mercury</button>
+          <button onclick="changePlanet(this.value)" class="nav__item" href="venus.html" value="1">venus</button>
+          <button onclick="changePlanet(this.value)" class="nav__item" href="earth.html" value="2">earth</button>
+          <button onclick="changePlanet(this.value)" class="nav__item" href="mars.html" value="3">mars</a>
+          <button onclick="changePlanet(this.value)" class="nav__item" href="jupiter.html" value="4">jupiter</button>
+          <button onclick="changePlanet(this.value)" class="nav__item" href="saturn.html" value="5">saturn</button>
+          <button onclick="changePlanet(this.value)" class="nav__item" href="uranus.html" value="6">uranus</button>
+          <button onclick="changePlanet(this.value)" class="nav__item" href="neptune.html" value="7">neptune</button>
         </div>
       </div>
       <div class="main">
-        <img src="assets/planet-mercury.svg" alt="Mercury" />
+        <div class="planet"><img id="planet__img" src="assets/planet-mercury.svg" alt="Mercury" /></div>
         <div class="main__info">
-          <h1>Mercury</h1>
-          <p>
+          <h1 id="planet__name">Mercury</h1>
+          <p id="overview">
             Mercury is the smallest planet in the Solar System and the closest
             to the Sun. Its orbit around the Sun takes 87.97 Earth days, the
             shortest of all the Sun's planets. Mercury is one of four
@@ -42,62 +47,91 @@
           </p>
           <p>
             <span>Source:</span>
-            <a href="https://en.wikipedia.org/wiki/Mercury">Wikipedia →</a>
+            <a id="wiki" href="https://en.wikipedia.org/wiki/Mercury">Wikipedia →</a>
           </p>
           <div class="internal__pages">
-            <button>01 overview</button>
-            <button>02 internal structure</button>
-            <button>03 surface geology</button>
+            <button id="planet" onclick="changeInfo(this)"  value="overview" >01 overview</button>
+            <button id="internal" onclick="changeInfo(this)"  value="structure" >02 internal structure</button>
+            <button id="geology" onclick="changeInfo(this)"  value="geology" >03 surface geology</button>
           </div>
         </div>
       </div>
       <div class="footer">
         <div class="data">
           <h4>rotation time</h4>
-          <h2>58.6 Days</h2>
+          <h2 id="rotation">58.6 Days</h2>
         </div>
         <div class="data">
           <h4>revolution time</h4>
-          <h2>87.97 Days</h2>
+          <h2 id="revolution">87.97 Days</h2>
         </div>
         <div class="data">
           <h4>radius</h4>
-          <h2>2,439.7 KM</h2>
+          <h2 id="radius">2,439.7 KM</h2>
         </div>
         <div class="data">
           <h4>Average temp</h4>
-          <h2>430 °C</h2>
+          <h2 id="temp">430 °C</h2>
         </div>
       </div>
     </div>
 
-    <!-- Overview Content Start -->
+    <script>
+      let id = 0;
+      let planet = document.getElementById('planet__img');
+      let title = document.getElementById('planet__name');
+      let wiki = document.getElementById('wiki');
+      let overview = document.getElementById('overview');
+      let rotation = document.getElementById('rotation');
+      let revolution = document.getElementById('revolution');
+      let radius = document.getElementById('radius');
+      let temp = document.getElementById('temp');
 
-    <!-- URL: https://en.wikipedia.org/wiki/Mercury_(planet) -->
+      let internalBtns = document.querySelectorAll('.internal__pages button');
+      let overviewBtn = document.querySelector('.internal__pages button:nth-of-type(1)');
+      let structureBtn = document.querySelector('.internal__pages button:nth-of-type(2)');
+      let geologyBtn = document.querySelector('.internal__pages button:nth-of-type(3)');
+     
 
-    <!-- Overview Content End -->
+      let loadPage = () => {
+        fetch('data.json')
+        .then((promise) => promise.json())
+        .then((json) => {
+          planet.src = json[id].images.planet;
+          title.innerText = json[id].name;
+          wiki.href = json[id].overview.source;
+          overview.innerText = json[id].overview.content;
+          rotation.innerText = json[id].rotation;
+          revolution.innerText = json[id].revolution;
+          radius.innerText = json[id].radius;
+          temp.innerText = json[id].temperature;
+        });
+      }
+      loadPage();
+      
+      
+      let changePlanet = e => {
+         id = e;
+         loadPage();
+      }
 
-    <!-- Internal Structure Content Start -->
+      let changeInfo = (e) => {
+        fetch('data.json')
+        .then((promise) => promise.json())
+        .then(json => { 
+          internalBtns.forEach(btn => {
+            overview.innerText = json[id][e.value].content;
+            planet.src = json[id].images[e.id];
+            btn.classList.remove('active');
+          });
+          e.classList.add("active");
+          console.log(e.id);
 
-    <!-- Mercury appears to have a solid silicate crust and mantle overlying a solid,
-    iron sulfide outer core layer, a deeper liquid core layer, and a solid inner
-    core. The planet's density is the second highest in the Solar System at
-    5.427 g/cm3 , only slightly less than Earth's density. Source : Wikipedia -->
-    <!-- URL: https://en.wikipedia.org/wiki/Mercury_(planet)#Internal_structure -->
+          
+        })
+      }
 
-    <!-- Internal Structure Content End -->
+    </script>
 
-    <!-- Surface Geology Content Start -->
-
-    <!-- Mercury's surface is similar in appearance to that of the Moon, showing
-    extensive mare-like plains and heavy cratering, indicating that it has been
-    geologically inactive for billions of years. It is more heterogeneous than
-    either Mars's or the Moon’s. Source : Wikipedia -->
-    <!-- URL: https://en.wikipedia.org/wiki/Mercury_(planet)#Surface_geology -->
-
-    <!-- Surface Geology Content End -->
-
-    <!-- 01 Overview 02 Internal Structure 03 Surface Geology Rotation Time 58.6 Days
-    Revolution Time 87.97 Days Radius 2,439.7 KM Average Temp. 430°c -->
   </body>
 </html>
