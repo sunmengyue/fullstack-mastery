@@ -121,9 +121,8 @@
             overview.innerText = json[id][e.value].content;
             planet.src = json[id].images[e.id];
             btn.classList.remove('active');
-            e.classList.add('active');
-            console.log(e)
-          });     
+          }); 
+          e.classList.add('active');   
         })
       }
 
